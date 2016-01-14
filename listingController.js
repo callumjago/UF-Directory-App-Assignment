@@ -2,7 +2,6 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
   function($scope, Listings) {
     $scope.listings = Listings;
     $scope.detailedInfo = undefined;
-    $scope.detail = false;
     $scope.ind = undefined;
 
     /* 
@@ -14,7 +13,6 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
       $scope.listings.splice(index, 1);
     };
     $scope.showDetails = function(index) {
-     this.detail = !this.detail;
      $scope.ind = index;
     };
   }
