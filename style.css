@@ -1,3 +1,5 @@
+/* Styles go here */
+
 #searchBar {
   margin: 15px 10px;
 }
@@ -8,17 +10,43 @@
 }
 
 #space {
-	height: 20px;
+  height: 20px;
 }
 
 body {
-	background-color: lightblue;
+  background-color: #80bfff;
 }
 
 div {
-	background-color: white;
+  background-color: white;
 }
 
-#header {
-	margin-left: 10px;
+h1 {
+  text-align: center;
+  font-family: "Arial Black", Gadget, sans-serif;
+}
+
+div.tableWrapper {
+  border-style: groove;
+  border-color: #cce5ff;
+  background-color: #ffcc80;
+  
+}
+
+h2 {
+  text-align: center;
+  font-family: "Arial Black", Gadget, sans-serif;
+}
+
+h3 {
+  font-family: "Arial Black", Gadget, sans-serif;
+}
+
+.jumbotron {
+  background-color: #cce5ff;
+}
+
+h4 {
+  font-style: italic;
+  text-align: center;
 }

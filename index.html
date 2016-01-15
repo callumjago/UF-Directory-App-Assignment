@@ -7,13 +7,13 @@
   <body ng-app="directoryApp">
     <div class="container">
       <div class="row">
-        <h1 id = "header">UF Directory App</h1>
+        <h1>UF Directory App</h1>
       </div>
       
       <div class="row" ng-controller="ListingsController">
         <div id = "myAlert" class = "alert alert-info" ng-show = "showInstruction">
                 <a href = "#" class = "close" data-dismiss = "alert">&times;</a>
-                <strong>Instructions:</strong> Click on a listing to view more information and the option to delete a listing.
+                <strong>Instructions:</strong> Click on a listing to view more information and delete a listing.
        </div>
        <div id = "myAlert" class = "alert alert-warning" ng-show = "showDeleteMessage">
                 <a href = "#" class = "close" data-dismiss = "alert">&times;</a>
@@ -29,17 +29,21 @@
           </div>
           <div class="tableWrapper">
             
-            <table class="table table-striped table-hover">
-              <tr>
-                <th>Code</th>
-                <th>Name</th>
-                <th></th>
-              </tr>
-              <tr ng-repeat = "listing in listings | filter:search">
-                <th ng-click = "showDetails($index)">{{listing.code}}</th>
-                <th ng-click = "showDetails($index)">{{listing.name}}</th>
-                <td><input type = "submit" value = "remove" ng-click = "deleteListing(listing)" ng-show = "ind == $index"/></td>
-              </tr>
+            <table class="table table-striped table-hover" >
+              <thead>
+                <tr>
+                  <th>Code</th>
+                  <th>Name</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat = "listing in listings | filter:search">
+                  <th ng-click = "showDetails($index)">{{listing.code}}</th>
+                  <th ng-click = "showDetails($index)">{{listing.name}}</th>
+                  <td><input type = "submit" value = "remove" ng-click = "deleteListing(listing)" ng-show = "ind == $index"/></td>
+                </tr>
+              </tbody>
               <!-- 
                   Fill in the rest of the table:
                       * populate the rows with the code and name of each listing
@@ -62,7 +66,7 @@
               </div>
               <div class="form-group">
                 <label for="name">Building Name</label>
-                <input type="text" ng-model="name" class="form-control" id="name" placeholder="Name (ex. Steinbrenner Band Hall)">
+                <input type="text" ng-model="name" class="form-control" id="name" placeholder="Name (ex. Steinbrenner Band Hall">
               </div>
               <div class="form-group">
                 <label for="coordinates">Building Coordinates</label>
@@ -75,7 +79,6 @@
               </div>
               <button type="submit" class="btn btn-default">Submit</button>
               <div id = "space"></div>
-              
           </form>
         </div>
         <div class="col-md-6">
