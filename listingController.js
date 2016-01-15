@@ -32,7 +32,8 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
       
       $scope.success = true;
     };
-    $scope.deleteListing = function(index) {
+    $scope.deleteListing = function(listing) {
+      var index = $scope.listings.indexOf(listing);
       $scope.listings.splice(index, 1);
       $scope.showDeleteMessage = true;
     };

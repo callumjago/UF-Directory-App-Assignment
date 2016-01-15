@@ -7,13 +7,13 @@
   <body ng-app="directoryApp">
     <div class="container">
       <div class="row">
-        <h1>UF Directory App</h1>
+        <h1 id = "header">UF Directory App</h1>
       </div>
       
       <div class="row" ng-controller="ListingsController">
         <div id = "myAlert" class = "alert alert-info" ng-show = "showInstruction">
                 <a href = "#" class = "close" data-dismiss = "alert">&times;</a>
-                <strong>Instructions:</strong> Click on a listing to view more information and delete a listing.
+                <strong>Instructions:</strong> Click on a listing to view more information and the option to delete a listing.
        </div>
        <div id = "myAlert" class = "alert alert-warning" ng-show = "showDeleteMessage">
                 <a href = "#" class = "close" data-dismiss = "alert">&times;</a>
@@ -38,7 +38,7 @@
               <tr ng-repeat = "listing in listings | filter:search">
                 <th ng-click = "showDetails($index)">{{listing.code}}</th>
                 <th ng-click = "showDetails($index)">{{listing.name}}</th>
-                <td><input type = "submit" value = "remove" ng-click = "deleteListing($index)" ng-show = "ind == $index"/></td>
+                <td><input type = "submit" value = "remove" ng-click = "deleteListing(listing)" ng-show = "ind == $index"/></td>
               </tr>
               <!-- 
                   Fill in the rest of the table:

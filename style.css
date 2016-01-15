@@ -18,3 +18,7 @@ body {
 div {
 	background-color: white;
 }
+
+#header {
+	margin-left: 10px;
+}
