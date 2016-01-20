@@ -9,6 +9,8 @@ var fs = require('fs'),
     Listing = require('./ListingSchema.js'), 
     config = require('./config');
 
+mongoose.Connect('mongodb://greg.wolfe:drowssap@ds047325.mongolab.com:47325/uf-listings-database');
+
 /* Connect to your database */
 
 /* 
